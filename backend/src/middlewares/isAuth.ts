@@ -8,9 +8,14 @@ export const protect = (req: any, res: Response, next: NextFunction) => {
 
   try {
     const decoded:any = jwt.verify(token, process.env.JWT_SECRET!!);
-    (req as any).user = decoded.id;
+    (req as any).user = {
+      id:decoded.userId,
+      orgId:decoded.orgId,
+      role:decoded.role
+    };
     next();
   } catch {
     next(new ApiError(401,"Invalid token"));
   }
 };
+

@@ -19,9 +19,11 @@ app.get('/',(req,res)=>{
 
 import authRoutes from './routes/authRoutes'
 import taskRoutes from './routes/taskRoutes'
+import prohectRoutes from './routes/projectRoutes'
 
 app.use('/api/v1/auth',authRoutes)
 app.use('/api/v1/task',taskRoutes)
+app.use('projects',prohectRoutes)
 
 app.use(notFound)
 app.use(errorHandler)
