@@ -7,15 +7,25 @@ import {
 } from "../services/taskServices";
 import { NextFunction, Request, Response } from "express";
 import { asyncHandler } from "../middlewares/asyncHandler";
+import { sendResponse } from "../utils/responseHandler";
 
 export const createTask = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const task = await createTaskService(req.body, (req as any).user);
-      res.status(201).json({
-        success: true,
-        msg: "Task created",
+
+      await sendResponse({
+        res,
+        statusCode: 201,
+        message: "Task created",
         data: task,
+        log: {
+          action: "TASK_CREATED",
+          user: (req as any).user,
+          entityId: task.id,
+          entityType: "TASK",
+          message: `Task created`,
+        },
       });
     } catch (err) {
       next(err);
@@ -25,8 +35,9 @@ export const createTask = asyncHandler(
 
 export const getTasks = asyncHandler(async (req: any, res: any) => {
   const tasks = await getTasksService(req.query, (req as any).user);
-  res.status(200).json({
-    success: true,
+  await sendResponse({
+    res,
+    statusCode: 200,
     message: "Tasks fetched",
     data: tasks,
   });
@@ -38,20 +49,36 @@ export const updateTask = asyncHandler(async (req: any, res: any) => {
     req.body,
     (req as any).user,
   );
-  res.status(200).json({
-    success: true,
-    message: "Tasks Updated",
-    data: tasks,
-  });
+    await sendResponse({
+        res,
+        statusCode: 200,
+        message: "Task Updated",
+        data: tasks,
+        log: {
+          action: "TASK_UPDATED",
+          user: (req as any).user,
+          entityId: tasks.id,
+          entityType: "TASK",
+          message: `Task Updated`,
+        },
+      });
+
+  
 });
 
 export const deleteTask = asyncHandler(async (req: any, res: any) => {
-  const tasks = await deleteTaskService(
-    req.params.id,
-    (req as any).user,
-  );
-  res.status(200).json({
-    success: true,
+  const tasks = await deleteTaskService(req.params.id, (req as any).user);
+
+   await sendResponse({
+    res,
+    statusCode: 200,
     message: "Tasks Deleted",
+     log: {
+          action: "TASK_DELETED",
+          user: (req as any).user,
+          entityId: req.params.id,
+          entityType: "TASK",
+          message: `Task Deleted`,
+        },
   });
 });

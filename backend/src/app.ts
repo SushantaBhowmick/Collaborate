@@ -20,10 +20,12 @@ app.get('/',(req,res)=>{
 import authRoutes from './routes/authRoutes'
 import taskRoutes from './routes/taskRoutes'
 import prohectRoutes from './routes/projectRoutes'
+import acitivityRoutes from './routes/activityLogRoute'
 
 app.use('/api/v1/auth',authRoutes)
 app.use('/api/v1/task',taskRoutes)
-app.use('projects',prohectRoutes)
+app.use('/api/v1/projects',prohectRoutes)
+app.use('/api/v1/projects',acitivityRoutes)
 
 app.use(notFound)
 app.use(errorHandler)
