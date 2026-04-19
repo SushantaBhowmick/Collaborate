@@ -8,5 +8,6 @@ const router = Router();
 
 router.route("/register").post(validate(registerSchema),registerUser)
 router.route("/login").post(validate(loginSchema),loginUser)
+router.route("/me").get(protect,getMyProfile)
 
 export default router;

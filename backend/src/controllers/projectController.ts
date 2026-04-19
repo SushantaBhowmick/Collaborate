@@ -29,7 +29,6 @@ export const createProject = asyncHandler(async(req:Request,res:Response)=>{
 
 export const getProjects = asyncHandler(async(req:Request,res:Response)=>{
     const project = await getProjectService((req as any).user);
-
     await sendResponse({
         res,
         message:"fetched projects",

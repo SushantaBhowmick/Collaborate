@@ -38,7 +38,7 @@ export const registerUser = asyncHandler(
     org.owner = user._id;
     await org.save();
 
-   const token = generateToken(user)
+   const token = await generateToken(user)
 
     res.status(201).json({
       success: true,
@@ -71,10 +71,11 @@ export const loginUser = asyncHandler(async (req: Request, res: Response) => {
     throw new ApiError(400, "Invalid Credentials");
   }
 
-  const token = generateToken(userExits)
+  const token = await generateToken(userExits)
 
   res.status(200).json({
     success: true,
+    message:"Login Successfully",
     data: userExits,
     token,
   });
@@ -82,9 +83,8 @@ export const loginUser = asyncHandler(async (req: Request, res: Response) => {
 
 export const getMyProfile = asyncHandler(
   async (req: Request, res: Response) => {
-    const userId = (req as any).user?.userId;
-    console.log(userId);
-    const userExits = await User.findById(userId);
+    const user = (req as any).user;
+    const userExits = await User.findById(user.id).select('-password');
     if (!userExits) {
       throw new ApiError(400, "User Not found");
     }

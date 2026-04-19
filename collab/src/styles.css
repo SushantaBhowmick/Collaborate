@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+
+
+.input{
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 5px;
+}
+.btn{
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

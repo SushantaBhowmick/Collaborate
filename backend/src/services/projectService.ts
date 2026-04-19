@@ -6,7 +6,7 @@ export const createProjectService = async (data: any, user: any) => {
   return await Project.create({
     name: data.name,
     description: data.description,
-    orgId: user.orfId,
+    orgId: user.orgId,
     members: [user.id],
     createdBy: user.id,
   });

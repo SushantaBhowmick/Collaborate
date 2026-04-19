@@ -1,0 +1,27 @@
+<div class="fixed inset-0 bg-black/50 flex items-center justify-center">
+  <div class="bg-white rounded-lg w-full max-w-md p-4 shadow-lg relative">
+      <button
+      (click)="onClose()"
+    class="absolute top-2 right-2 text"
+    >X</button>
+    <h2 class="text-lg font-semibold mb-3">Create Project</h2>
+    <form
+      action=""
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+      class="space-y-3 bg-white p-4 rounded shadow"
+    >
+      <input type="text" placeholder="Project Name" formControlName="name" class="input w-full" />
+      <textarea
+        name=""
+        id=""
+        placeholder="Description"
+        formControlName="description"
+        class="input w-full"
+      ></textarea>
+      <button class="btn w-full" type="submit">
+        {{ loading ? 'Creating...' : 'Create Project' }}
+      </button>
+    </form>
+  </div>
+</div>
