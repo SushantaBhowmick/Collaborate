@@ -23,7 +23,13 @@ export const routes: Routes = [
       },
       {
         path: 'projects',
-        loadComponent: () => import('./features/projects/pages/project-list/project-list').then((m) => m.ProjectList),
+        loadComponent: () =>
+          import('./features/projects/pages/project-list/project-list').then((m) => m.ProjectList),
+      },
+      {
+        path: 'projects/:id',
+        loadComponent: () =>
+          import('./features/task/pages/task-board/task-board').then((m) => m.TaskBoard),
       },
     ],
   },

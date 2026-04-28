@@ -1,0 +1,23 @@
+<div class="bg-white p-4 border border-gray-100 rounded-md">
+<div class=" flex justify-between items-center ">
+    <div class="font-medium">{{ task.title }}</div>
+
+  <!-- priority -->
+  <span class="text xs px-2 py-1 rounded" [ngClass]="getPriorityColor()">
+    {{ task.priority }}
+  </span>
+</div>
+
+  <div class="flex items-center gap-2 mt-2">
+    <div
+      class="w-7 h-7 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs"
+    >
+      {{ task?.assignedTo?.name?.charAt(0) || '?' }}
+    </div>
+    <span class="text-xs text-gray-600">
+      {{ task.assignedTo?.name || 'Unassigned' }}
+    </span>
+  </div>
+</div>
+
+

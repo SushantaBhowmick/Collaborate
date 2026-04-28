@@ -6,4 +6,6 @@ const router = express.Router();
 
 router.route('/activity/:id').get(protect,getActivityLogs);
 
+router.get("/:entityId", protect, getActivityLogs);
+
 export default router;

@@ -1,0 +1,41 @@
+<div class="flex justify-between items-center mb-6">
+  <h2 class="text-2xl font-bold">Task Board</h2>
+  <div class="flex gap-2 items-center">
+  <button class="px-4 py-1 rounded-md border" (click)="refresh()">Refresh</button>
+  <button class="btn px-4 py-2 rounded-lg" (click)="openModal()">+ Add Task</button>
+  </div>
+</div>
+
+<div class="grid grid-cols-3 gap-6 h-full">
+  <!-- COLUMN -->
+  @for (col of statusCol; track $index) {
+    <ng-container>
+      <div class="bg-gray-50 p-4 rounded-xl shadow-inner">
+        <h3 class="font-semibold mb-3">{{ col.label }}</h3>
+
+        <div
+          cdkDropList
+          [cdkDropListData]="(col.data | async) ?? []"
+          (cdkDropListDropped)="drop($event, col.key)"
+          [cdkDropListConnectedTo]="listIds"
+          [id]="listIds[$index]"
+          class="space-y-3 min-h-[300px]"
+        >
+          @for (task of col.data | async; track $index) {
+            <div cdkDrag>
+              <app-task-card [task]="task" (click)="openTask(task)"> </app-task-card>
+            </div>
+          }
+        </div>
+      </div>
+    </ng-container>
+  }
+
+  @if (showModal) {
+    <app-task-modal [projectId]="selectedProjectId" (close)="closeModal()"> </app-task-modal>
+  }
+
+  @if (selectedTask$ | async) {
+    <app-task-drawer></app-task-drawer>
+  }
+</div>

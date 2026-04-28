@@ -21,7 +21,6 @@ export const createTaskService = async (data: any, user: any) => {
       throw new ApiError(400, "User not part of project");
     }
   }
-
   return await Task.create({
     ...data,
     orgId: user.orgId,
@@ -61,7 +60,10 @@ export const getTasksService = async (query: any, user: any) => {
 
   // 🔥 STEP 3: If specific projectId is passed → validate access
   if (projectId) {
-    if (!userProjects.includes(projectId)) {
+    const hasAcces = userProjects.some(
+      id=>id.toString()===projectId.toString()
+    )
+    if (!hasAcces) {
       throw new ApiError(403, "Not authorized for this project");
     }
     filter.projectId = projectId;

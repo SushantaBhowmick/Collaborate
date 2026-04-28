@@ -1,0 +1,18 @@
+<div class="mt-6 border-t">
+
+  <h4 class="font-semibold my-2">Activity:</h4>
+
+  <div class="space-y-2 text-sm text-gray-600">
+
+  @for (log of logs(); track $index) {
+      <div  class="border-l-2 pl-3">
+      {{ log.message }}
+      <div class="text-xs text-gray-400">
+        {{ log.createdAt | date:'short' }}
+      </div>
+    </div>
+  }
+
+  </div>
+
+</div>

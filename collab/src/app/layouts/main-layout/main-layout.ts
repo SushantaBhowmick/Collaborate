@@ -14,7 +14,9 @@ export class MainLayout implements OnInit {
     private auth: Auth,
     private router: Router,
   ) {}
-  user: any=signal(null);
+  user = signal<any | null>(null);
+  isCollapsed = signal(false);
+  title = signal('Dashboard');
 
   logout() {
     console.log('logout');
@@ -22,11 +24,21 @@ export class MainLayout implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  setTitle(value:string){
+    this.title.set(value)
+  }
+
+
+  toggleSidebar() {
+    this.isCollapsed.update(v=>!v);
+  }
+
   ngOnInit(): void {
     const fetchUesr = () => {
       this.auth.getMe().subscribe({
         next: (res) => {
-          this.user.set(res.data)
+          // this.user=res.data
+          this.user.set(res.data);
           console.log({ res });
         },
       });

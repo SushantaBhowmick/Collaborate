@@ -2,24 +2,24 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ToastService } from './toast/toast-service';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Auth {
   private http = inject(HttpClient);
-  private API = 'http://localhost:4000/api/v1/auth'
   constructor(private toast:ToastService){}
 
   register(data:any):Observable<any>{
-    return this.http.post(`${this.API}/register`,data)
+    return this.http.post(`${environment.apiUrl}/auth/register`,data)
   }
   login(data:any):Observable<any>{
-    return this.http.post(`${this.API}/login`,data)
+    return this.http.post(`${environment.apiUrl}/auth/login`,data)
   }
 
   getMe():Observable<any>{
-    return this.http.get(`${this.API}/me`)
+    return this.http.get(`${environment.apiUrl}/auth/me`)
   }
 
   logout(){

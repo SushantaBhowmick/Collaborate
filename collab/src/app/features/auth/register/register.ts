@@ -50,7 +50,7 @@ submit(){
     },
     error:(err)=>{
       this.loading = false;
-      this.toast.error(err.error.message|| "register failed")
+      // this.toast.error(err.error.message|| "register failed")
       this.error = err.error.mesage;
     }
   })

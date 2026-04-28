@@ -15,7 +15,7 @@ export interface IActivityLog extends Document {
   userId: mongoose.Types.ObjectId;
   orgId: mongoose.Types.ObjectId;
   entityId: mongoose.Types.ObjectId;
-  entityType: "Task" | "Project";
+  entityType: "TASK" | "PROJECT";
   message: string;
 }
 
@@ -27,7 +27,7 @@ const activitySchema = new mongoose.Schema<IActivityLog>(
     entityId: { type: mongoose.Schema.Types.ObjectId, required: true },
     entityType: {
       type: String,
-      enum: ["Task", "Project"],
+      enum: ["TASK", "PROJECT"],
     },
     message: String,
   },

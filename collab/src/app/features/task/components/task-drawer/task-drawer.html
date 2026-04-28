@@ -1,0 +1,95 @@
+@if (task$ | async; as task) {
+  <div class="fixed right-0 top-0 w-[400px] h-full bg-white shadow-xl z-50 p-6 overflow-y-auto">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-bold">Task Details</h2>
+      <button (click)="close()">✖</button>
+    </div>
+
+    <!-- TITLE -->
+    <!-- <h3 class="text-xl font-semibold">{{ task.title }}</h3> -->
+    <input
+      type="text"
+      class="text-xl font-semibold w-full border-b outline-none mb-2"
+      [value]="task.title"
+      (change)="update(task, 'title', $event.target.value)"
+    />
+
+    <!-- DESCRIPTION -->
+    <!-- <p class="text-gray-600 mt-2">{{ task.description }}</p> -->
+    <!-- DESCRIPTION -->
+    <div class="mt-5">
+      <label for="" class="font-semibold">Decription:</label>
+      <textarea
+        class="border-2 border-gray-400 p-2 rounded-lg w-full"
+        [value]="task.description"
+        (change)="update(task, 'description', $any($event.target).value)"
+      >
+      </textarea>
+    </div>
+
+   <div class="flex gap-2 mt-3 w-full">
+     <!-- status -->
+    <div>
+      <label for="" class="font-semibold">Status:</label>
+      <select
+      name=""
+      id=""
+      class="w-full border-2 p-2 rounded-md"
+      [value]="task.status"
+      ,
+      (change)="update(task, 'status', $any($event.target).value)"
+    >
+      <option value="TODO">Todo</option>
+      <option value="IN_PROGRESS">In Progress</option>
+      <option value="DONE">Done</option>
+    </select>
+    </div>
+
+    <!-- PRIORITY -->
+    <div>
+      <label for="" class="font-semibold">Priority:</label>
+      <select
+      class="w-full border-2 p-2 rounded-md"
+      [value]="task.priority"
+      (change)="update(task, 'priority', $any($event.target).value)"
+    >
+      <option value="LOW">Low</option>
+      <option value="MEDIUM">Medium</option>
+      <option value="HIGH">High</option>
+    </select>
+    </div>
+
+     <!-- Due Date -->
+   <div>
+       <label for="" class="font-semibold">Due Date:</label>
+    <input
+      type="date"
+      class="w-full border-2 p-2 rounded-md"
+      [value]="task.dueDate | date: 'yyyy-MM-dd'"
+      (change)="update(task, 'dueDate', $any($event.target).value)"
+    />
+   </div>
+   </div>
+
+<div class="flex w-full mt-3 flex-col">
+       <label for="" class="font-semibold">Assign User:</label>
+
+      <!-- ASSIGNED -->
+    <select class="w-full border-2 p-2 rounded-md" (change)="update(task, 'assignedTo', $any($event.target).value)">
+      <option value="" >
+          Select User
+        </option>
+      @for (user of users$ | async; track $index) {
+        <option [value]="user?._id" [selected]="user?._id === task.assignedTo?._id">
+          {{ user?.name }}
+        </option>
+      }
+    </select>
+
+</div>
+   
+
+    <app-comment-box [taskId]="task._id"></app-comment-box>
+    <app-activity-timeline [taskId]="task._id"></app-activity-timeline>
+  </div>
+}
