@@ -7,9 +7,9 @@
   >
     <div class="flex items-center justify-between p-2 mb-6">
      @if(!isCollapsed()){
-       <h2 class="text-xl fonbol">Collab</h2>
+       <h2 class="text-xl fonbol cursor-pointer">Collab</h2>
      }
-      <button (click)="toggleSidebar()" class="text-2xl">☰</button>
+      <button (click)="toggleSidebar()" class="text-2xl cursor-pointer">☰</button>
     </div>
 
     <nav class="space-y-2">
@@ -19,10 +19,17 @@
           <span>Dasboard</span>
          }
       </a>
+
       <a [routerLink]="['/projects']" class="p-2 flex items-center gap-3 hover:bg-gray-700 rounded" (click)="setTitle('Projects')">
          <span class="text-2xl">📁</span>
          @if(!isCollapsed()){
           <span>Projects</span>
+         }
+      </a>
+      <a [routerLink]="['collaborators']" class="p-2 flex items-center gap-3 hover:bg-gray-700 rounded" (click)="setTitle('Collaborators')">
+         <span class="text-2xl">🤝</span>
+         @if(!isCollapsed()){
+          <span>Collaborators</span>
          }
       </a>
     </nav>

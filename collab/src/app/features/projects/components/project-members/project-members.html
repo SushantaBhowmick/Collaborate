@@ -1,0 +1,21 @@
+<div class="fixed inset-0 flex items-center justify-center bg-black/50">
+  <div class="space-y-4 bg-white w-full max-w-sm shadow-lg p-6">
+    <div class="p-4 rounded  w-full ">
+     <div class="flex justify-between">
+         <h3 class="font-semibold mb-2">Add Member</h3>
+         <button (click)="closeModal()" class="font-semibold ">X</button>
+     </div>
+
+      <div class=" w-full">
+        <select [(ngModel)]="selectedUser" class="w-full p-2 border-2 ">
+        <option value="">Select user</option>
+        <option *ngFor="let u of users$ | async" [value]="u._id">
+          {{ u.name }}
+        </option>
+      </select>
+
+      <button class="mt-2 p-2 w-full bg-blue-700 text-white" (click)="addMember()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>

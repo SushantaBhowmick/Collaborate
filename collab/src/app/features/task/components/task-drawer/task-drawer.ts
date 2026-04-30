@@ -1,4 +1,4 @@
-import { Component, inject, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, HostListener, inject, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { selectCurrentTask } from '../../state/task.selectors';
 import * as TaskAction from '../../state/task.actions';
@@ -21,6 +21,11 @@ export class TaskDrawer implements OnInit, OnChanges {
   selectedProjectId: any;
   task$ = this.store.select(selectCurrentTask);
   users$ = this.store.select(selectUsers);
+
+  @HostListener('document:keydown:escape')
+  handleEsc(){
+    this.close();
+  }
 
   ngOnInit(): void {
     this.selectedProjectId = this.activateRoute.snapshot.paramMap.get('id');

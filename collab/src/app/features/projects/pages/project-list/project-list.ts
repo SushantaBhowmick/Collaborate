@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { selectLoading, selectProjects } from '../../state/project.selectors';
 import * as ProjectActions from '../../state/project.actions';
 import { RouterLink } from "@angular/router";
+import { InviteForm } from "../../../invite/components/invite-form/invite-form/invite-form";
 
 @Component({
   selector: 'app-project-list',
@@ -26,12 +27,14 @@ export class ProjectList implements OnInit {
   // loading=false;
   showForm = false
 
+
   ngOnInit(): void {
     this.fetchProjects();
   }
   closeDialog(){
     this.showForm=false;
   }
+
   
   fetchProjects(){
     console.log(this.loading$)

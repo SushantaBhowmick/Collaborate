@@ -1,0 +1,27 @@
+<div class="fixed inset-0 flex items-center justify-center bg-black/50">
+  <div class="bg-white rounded-lg w-full max-w-md p-6 shadow-lg relative">
+    <div class="flex justify-between my-2">
+      <h2 class="font-semibold text-xl">Invite Member</h2>
+      <button (click)="onClose()" class="absolute top-2 right-2 text cursor-pointer font-semibold">X</button>
+    </div>
+    <div>
+      <form (ngSubmit)="submit()" class="space-y-3" action="" [formGroup]="form">
+        <div class="w-full flex flex-col">
+          <label for="">Email:</label>
+          <input type="text" formControlName="email" placeholder="User email" class="p-2 border-2 rounded-md" />
+        </div>
+
+        <div class="w-full flex flex-col">
+          <label for="">Role:</label>
+          <select name="" formControlName="role" class="p-2 border-2 rounded-md" id="">
+            <option value="">Select Role</option>
+            <option value="DEVELOPER">Developer</option>
+            <option value="MANAGER">Manager</option>
+          </select>
+        </div>
+
+        <button class="w-full btn">Send Invite</button>
+      </form>
+    </div>
+  </div>
+</div>

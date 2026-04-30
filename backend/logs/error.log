@@ -205,3 +205,74 @@
 {"level":"error","message":"Task validation failed: assignedTo: Cast to ObjectId failed for value \"Select User\" (type string) at path \"assignedTo\" because of \"BSONError\"","timestamp":"2026-04-28T06:30:05.189Z"}
 {"level":"error","message":"Task validation failed: assignedTo: Cast to ObjectId failed for value \"\" (type string) at path \"assignedTo\" because of \"BSONError\"","timestamp":"2026-04-28T06:32:39.563Z"}
 {"level":"error","message":"Task validation failed: assignedTo: Cast to ObjectId failed for value \"\" (type string) at path \"assignedTo\" because of \"BSONError\"","timestamp":"2026-04-28T06:33:30.531Z"}
+{"level":"error","message":"Invite validation failed: role: `` is not a valid enum value for path `role`.","timestamp":"2026-04-28T11:15:30.241Z"}
+{"level":"error","message":"User validation failed: password: Path `password` is required., email: Path `email` is required., name: Path `name` is required.","timestamp":"2026-04-28T11:18:41.745Z"}
+{"level":"error","message":"User validation failed: password: Path `password` is required., email: Path `email` is required., name: Path `name` is required.","timestamp":"2026-04-28T11:18:55.558Z"}
+{"level":"error","message":"toke is not defined","timestamp":"2026-04-28T11:21:03.364Z"}
+{"level":"error","message":"User validation failed: password: Path `password` is required., email: Path `email` is required., name: Path `name` is required.","timestamp":"2026-04-28T11:21:15.528Z"}
+{"level":"error","message":"User validation failed: email: Path `email` is required.","timestamp":"2026-04-28T11:23:58.614Z"}
+{"level":"error","message":"Invalid Credentials","timestamp":"2026-04-28T11:26:31.922Z"}
+{"level":"error","message":"Invalid Credentials","timestamp":"2026-04-28T11:26:43.405Z"}
+{"level":"error","message":"Invalid Credentials","timestamp":"2026-04-28T11:27:11.284Z"}
+{"level":"error","message":"User Not found","timestamp":"2026-04-28T11:28:49.665Z"}
+{"level":"error","message":"User Not found","timestamp":"2026-04-28T11:30:44.267Z"}
+{"level":"error","message":"Already send an Invitation","timestamp":"2026-04-28T12:02:30.539Z"}
+{"level":"error","message":"Already send an Invitation","timestamp":"2026-04-28T12:03:34.569Z"}
+{"level":"error","message":"Already send an Invitation","timestamp":"2026-04-28T12:03:46.663Z"}
+{"level":"error","message":"Invalid Credentials","timestamp":"2026-04-28T12:06:45.970Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-28T12:07:44.066Z"}
+{"level":"error","message":"Not Found -/api/v1/task?projectId=69e5daae03361d508401d3a1","timestamp":"2026-04-28T12:21:43.753Z"}
+{"level":"error","message":"Not Found -/api/v1/task?projectId=69e5daae03361d508401d3a1","timestamp":"2026-04-28T12:21:43.761Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-28T12:22:36.410Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-28T12:25:10.227Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-28T12:25:23.511Z"}
+{"level":"error","message":"connection <monitor> to 159.41.242.228:27017 timed out","timestamp":"2026-04-28T16:41:58.506Z"}
+{"level":"error","message":"connection <monitor> to 159.41.242.228:27017 timed out","timestamp":"2026-04-28T16:41:58.525Z"}
+{"level":"error","message":"connection <monitor> to 159.41.242.228:27017 timed out","timestamp":"2026-04-28T16:41:58.528Z"}
+{"level":"error","message":"Socket 'secureConnect' timed out after 30011ms (connectTimeoutMS: 30000)","timestamp":"2026-04-28T16:42:18.633Z"}
+{"level":"error","message":"Socket 'secureConnect' timed out after 30062ms (connectTimeoutMS: 30000)","timestamp":"2026-04-28T17:06:22.754Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-28T17:32:39.938Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-28T17:32:44.612Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-29T05:41:19.808Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-29T05:43:02.135Z"}
+{"level":"error","message":"Invalid Invite","timestamp":"2026-04-29T07:00:14.990Z"}
+{"level":"error","message":"Invalid Invite","timestamp":"2026-04-29T07:02:34.449Z"}
+{"level":"error","message":"Invalid Invite","timestamp":"2026-04-29T07:02:42.452Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-29T07:04:01.362Z"}
+{"level":"error","message":"Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-834ed6dd628sm1083457b3a.37 - gsmtp","timestamp":"2026-04-29T07:04:33.065Z"}
+{"level":"error","message":"Already send an Invitation","timestamp":"2026-04-29T07:04:51.841Z"}
+{"level":"error","message":"Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c7fd64f219dsm1066202a12.18 - gsmtp","timestamp":"2026-04-29T07:05:14.430Z"}
+{"level":"error","message":"Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-834ed6debe4sm1005889b3a.36 - gsmtp","timestamp":"2026-04-29T07:07:42.098Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-29T08:12:08.817Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-29T08:12:22.818Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-29T08:12:26.740Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-29T08:12:27.477Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-29T08:12:27.668Z"}
+{"level":"error","message":"Not authorized for this project","timestamp":"2026-04-29T08:12:31.044Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-29T08:21:06.593Z"}
+{"level":"error","message":"Invalid token","timestamp":"2026-04-29T09:07:02.002Z"}
+{"level":"error","message":"Invalid token","timestamp":"2026-04-29T09:07:02.006Z"}
+{"level":"error","message":"Cannot destructure property 'userId' of 'req.body' as it is undefined.","timestamp":"2026-04-29T09:26:26.511Z"}
+{"level":"error","message":"Cannot destructure property 'userId' of 'req.body' as it is undefined.","timestamp":"2026-04-29T09:26:38.528Z"}
+{"level":"error","message":"Cannot destructure property 'userId' of 'req.body' as it is undefined.","timestamp":"2026-04-29T09:27:53.884Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{selectedProjectId}\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T09:30:31.760Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{selectedProjectId}\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T09:31:40.442Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{selectedProjectId}\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T09:32:24.265Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{selectedProjectId}\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T09:34:55.933Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{selectedProjectId}\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T09:40:41.499Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T09:56:26.240Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T09:58:03.463Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T10:01:37.910Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T10:04:48.963Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{selectedProjectId}\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T10:06:41.544Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{selectedProjectId}\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T10:07:03.775Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{selectedProjectId}\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T10:10:49.628Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Project\"","timestamp":"2026-04-29T10:11:04.436Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-29T10:31:13.950Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-29T10:31:19.341Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-29T10:31:25.193Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-29T10:40:39.514Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-29T10:40:48.888Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-29T10:40:49.784Z"}
+{"level":"error","message":"You are not allowed to perform this action","timestamp":"2026-04-29T10:40:56.603Z"}
+{"level":"error","message":"Not allowed","timestamp":"2026-04-29T10:41:13.936Z"}

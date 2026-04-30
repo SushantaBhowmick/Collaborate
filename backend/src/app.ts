@@ -23,6 +23,7 @@ import prohectRoutes from './routes/projectRoutes'
 import acitivityRoutes from './routes/activityLogRoute'
 import userRoutes from './routes/userRoutes'
 import commentRoutes from './routes/commentRoutes'
+import InviteRoutes from './routes/inviteRoutes'
 
 app.use('/api/v1/auth',authRoutes)
 app.use('/api/v1/task',taskRoutes)
@@ -30,6 +31,7 @@ app.use('/api/v1/projects',prohectRoutes)
 app.use('/api/v1/activity',acitivityRoutes)
 app.use('/api/v1/users',userRoutes)
 app.use('/api/v1/comments',commentRoutes)
+app.use('/api/v1/invites',InviteRoutes)
 
 app.use(notFound)
 app.use(errorHandler)

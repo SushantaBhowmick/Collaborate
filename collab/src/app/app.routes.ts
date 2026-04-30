@@ -31,6 +31,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/task/pages/task-board/task-board').then((m) => m.TaskBoard),
       },
+      {
+        path: 'collaborators',
+        loadComponent: () =>
+          import('./features/invite/components/invite-list/invite-list').then((m) => m.InviteList),
+      },
     ],
   },
   {
@@ -40,5 +45,9 @@ export const routes: Routes = [
   {
     path: 'register',
     loadComponent: () => import('./features/auth/register/register').then((m) => m.Register),
+  },
+  {
+    path: 'invite/:token',
+    loadComponent: () => import('./features/invite/pages/accept-invite/accept-invite').then((m) => m.AcceptInvite),
   },
 ];

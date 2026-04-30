@@ -1,7 +1,9 @@
 <div>
   <div class="flex justify-between mb-4">
     <h2 class="text-xl font-bold">Projects</h2>
-    <button class="btn" (click)="showForm = true">+ New Project</button>
+    <div class="flex items-center gap-2">
+      <button class="btn" (click)="showForm = true">+ New Project</button>
+    </div>
   </div>
 
   @if (loading$ | async) {
@@ -19,4 +21,5 @@
   @if (showForm) {
     <app-project-form (close)="closeDialog()" (created)="fetchProjects()" />
   }
+
 </div>

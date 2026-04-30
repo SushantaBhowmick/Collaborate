@@ -13,7 +13,7 @@ export const createProjectService = async (data: any, user: any) => {
 };
 
 export const getProjectService = async (user: any) => {
-  return await Project.find({ orgId: user.orgId }).populate(
+  return await Project.find({ orgId: user.orgId,members:user.id }).populate(
     "members",
     "name email",
   );
@@ -29,10 +29,10 @@ export const addMemberService = async (
     _id: projectId,
     orgId: currentUser.orgId,
   });
+  console.log(project)
   if (!project) {
     throw new ApiError(404, "Project not found");
   }
-
   //check usre belongs to same org
   const user = await User.findOne({
     _id: userId,

@@ -9,10 +9,11 @@ import { TaskModal } from '../../components/task-modal/task-modal';
 import { ActivatedRoute } from '@angular/router';
 import { TaskCard } from '../../components/task-card/task-card';
 import { TaskDrawer } from "../../components/task-drawer/task-drawer";
+import { ProjectMembers } from "../../../projects/components/project-members/project-members";
 
 @Component({
   selector: 'app-task-board',
-  imports: [CommonModule, CdkDrag, CdkDropList, TaskModal, DragDropModule, TaskCard, TaskDrawer],
+  imports: [CommonModule, CdkDrag, CdkDropList, TaskModal, DragDropModule, TaskCard, TaskDrawer, ProjectMembers],
   templateUrl: './task-board.html',
   styleUrl: './task-board.css',
 })
@@ -22,6 +23,7 @@ export class TaskBoard implements OnInit {
 
   
   showModal = false;
+  showMembresModal = false;
   selectedProjectId: any;
   
   todo$ = this.store.select(selectTasksByStatus('TODO'));
@@ -41,6 +43,7 @@ export class TaskBoard implements OnInit {
 
   ngOnInit(): void {
     this.selectedProjectId = this.activateRoute.snapshot.paramMap.get('id');
+    console.log(this.selectedProjectId)
     if(this.selectedProjectId){
       this.store.dispatch(TaskAction.loadTask({ projectId: this.selectedProjectId }));
     }
@@ -56,6 +59,9 @@ export class TaskBoard implements OnInit {
   }
   closeModal() {
     this.showModal = false;
+  }
+  closeMembersModal() {
+    this.showMembresModal = false;
   }
 
   openTask(task:any){
